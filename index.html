@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vibe Chat</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VibeChat</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="chat-container">
-  <header class="chat-header">✨ Vibe Chat ✨</header>
-  <main class="chat-messages" id="messages">
-    <div class="message bot">Привет! Добро пожаловать в вайб-чат 🌿</div>
-  </main>
-  <form id="chat-form" class="chat-input">
-    <input type="text" id="user-input" placeholder="Напиши сообщение..." autocomplete="off" />
-    <button type="submit">➤</button>
-  </form>
-</div>
-<script type="module" src="script.js"></script>
+  <h1>VibeChat 💬</h1>
+
+  <!-- Блок авторизации -->
+  <div id="auth-section">
+    <h2>Вход / Регистрация</h2>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Пароль (мин. 6 символов)" />
+    <br />
+    <button id="signup">Sign Up</button>
+    <button id="login">Login</button>
+    <p id="auth-error" style="color: red;"></p>
+  </div>
+
+  <!-- Блок чата -->
+  <div id="chat-section" style="display: none;">
+    <div>
+      <span>Вы вошли как: <strong id="userEmail"></strong></span>
+      <button id="logout">Logout</button>
+    </div>
+
+    <div id="messages" style="border:1px solid #ccc; height:300px; overflow-y:auto; margin:10px 0; padding:5px;">
+      <!-- Сообщения будут появляться здесь -->
+    </div>
+
+    <input type="text" id="messageInput" placeholder="Введите сообщение..." />
+    <button id="sendBtn">Send</button>
+  </div>
+
+  <!-- Подключаем JS -->
+  <script type="module" src="script.js"></script>
 </body>
 </html>
